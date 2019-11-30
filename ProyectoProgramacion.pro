@@ -4,4 +4,10 @@ CONFIG -= app_bundle
 CONFIG -= qt
 
 SOURCES += \
+        Clases/empleado.cpp \
+        Clases/producto.cpp \
         main.cpp
+
+HEADERS += \
+    Clases/empleado.h \
+    Clases/producto.h
