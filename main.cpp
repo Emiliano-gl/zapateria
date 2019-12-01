@@ -13,7 +13,20 @@ int main()
   BaseDeDatos* baseDeDatos = new BaseDeDatos;
   Bodega* bodega = new Bodega;
 
-  bodega->reporteInventario();
-  baseDeDatos->reporteDeVentas();
+  string nombre;
+  string claveEmpleado;
+
+  cout << "Ingrese el nombre del empleado: "; getline(cin, nombre);
+  system("clear");
+  cout << "Ingrese la clave del empleado: "; cin >> claveEmpleado;
+  system("clear");
+
+  Empleado* empleado = new Empleado(nombre, claveEmpleado);
+
+  cout << "Ingrese el numero de la opcion deseada: " << endl;
+  cout << "1) Registrar venta" << endl;
+  cout << "2) Generar reporte" << endl;
+  cout << "3) Mostrar catalogo" << endl;
+  cout << "4) Salir" << endl;
   return 0;
 }

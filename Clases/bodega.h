@@ -17,6 +17,9 @@ public:
   void agregarProducto(Producto *producto, const int &cantidad);
   void eliminarProducto();
   void eliminarProducto(const int index);
+
+  pair<Producto *, int> getProductoByClave(const string &clave);
+  vector<pair<Producto *, int> > getProductoByCategoria(const int &categoria);
 };
 
 #endif // BODEGA_H

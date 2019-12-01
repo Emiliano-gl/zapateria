@@ -8,6 +8,7 @@ SOURCES += \
         Clases/bodega.cpp \
         Clases/empleado.cpp \
         Clases/producto.cpp \
+        Clases/recursoshumanos.cpp \
         Clases/venta.cpp \
         main.cpp
 
@@ -17,5 +18,6 @@ HEADERS += \
     Clases/bodega.h \
     Clases/empleado.h \
     Clases/producto.h \
+    Clases/recursoshumanos.h \
     Clases/venta.h \
     auxiliares.h

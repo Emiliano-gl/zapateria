@@ -11,22 +11,22 @@ private:
   string categoria;
   string descripcion;
   int cantidadDisponible;
-  int precio;
+  double precio;
 
 public:
-  Producto(const string &clave, const string &categoria, const string &descripcion, const int &cantidadDisponible, const int &precio);
+  Producto(const string &clave, const string &categoria, const string &descripcion, const int &cantidadDisponible, const double &precio);
 
   void setClave(const string &clave);
-  void setCategoria(const string &categoria);
+  void setCategoria(const int &categoria);
   void setDescripcion(const string &descripcion);
   void setCantidadDisponible(const int &cantidadDisponible);
-  void setPrecio(const int &precio);
+  void setPrecio(const double &precio);
 
   string getClave();
   string getCategoria();
   string getDescripcion();
   int getCantidadDisponible();
-  int getPrecio();
+  double getPrecio();
 };
 
 #endif // PRODUCTO_H

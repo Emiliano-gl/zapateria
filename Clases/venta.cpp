@@ -1,6 +1,11 @@
 #include "venta.h"
 #include "auxiliaresClases.h"
 
+Venta::Venta()
+{
+  this->fecha = getDate();
+}
+
 Venta::Venta(Empleado *vendedor)
 {
   this->vendedor = vendedor;

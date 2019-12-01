@@ -16,6 +16,7 @@ private:
   string fecha;
 
 public:
+  Venta();
   Venta(Empleado *vendedor);
   void agregarProducto(Producto *producto, const int &cantidad);
 

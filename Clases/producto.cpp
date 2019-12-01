@@ -1,6 +1,6 @@
 #include "producto.h"
 
-Producto::Producto(const string &clave, const string &categoria, const string &descripcion, const int &cantidadDisponible, const int &precio)
+Producto::Producto(const string &clave, const string &categoria, const string &descripcion, const int &cantidadDisponible, const double &precio)
 {
   this->clave = clave;
   this->categoria = categoria;
@@ -14,9 +14,16 @@ void Producto::setClave(const string &clave)
   this->clave = clave;
 }
 
-void Producto::setCategoria(const string &categoria)
+void Producto::setCategoria(const int &categoria)
 {
-  this->categoria = categoria;
+  if(categoria == 0)
+    this->categoria = "tenis casuales";
+
+  if(categoria == 1)
+    this->categoria = "tenis futbol";
+
+  if(categoria == 2)
+    this->categoria = "chanclas";
 }
 
 void Producto::setDescripcion(const string &descripcion)
@@ -29,7 +36,7 @@ void Producto::setCantidadDisponible(const int &cantidadDisponible)
   this->cantidadDisponible = cantidadDisponible;
 }
 
-void Producto::setPrecio(const int &precio)
+void Producto::setPrecio(const double &precio)
 {
   this->precio = precio;
 }
@@ -54,7 +61,7 @@ int Producto::getCantidadDisponible()
   return this->cantidadDisponible;
 }
 
-int Producto::getPrecio()
+double Producto::getPrecio()
 {
   return this->precio;
 }
