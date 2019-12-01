@@ -1,7 +1,7 @@
 #ifndef EMPLEADO_H
 #define EMPLEADO_H
 
-#include <string>
+#include <iostream>
 using namespace std;
 
 class Empleado

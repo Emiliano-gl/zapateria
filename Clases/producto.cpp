@@ -1,14 +1,5 @@
 #include "producto.h"
 
-Producto::Producto()
-{
-  this->clave = "9999";
-  this->categoria = "deportivo";
-  this->descripcion = "calzado super deportivo";
-  this->cantidadDisponible = 10;
-  this->precio = 100;
-}
-
 Producto::Producto(const string &clave, const string &categoria, const string &descripcion, const int &cantidadDisponible, const int &precio)
 {
   this->clave = clave;

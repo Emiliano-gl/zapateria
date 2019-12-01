@@ -1,7 +1,7 @@
 #ifndef PRODUCTO_H
 #define PRODUCTO_H
 
-#include <string>
+#include <iostream>
 using namespace std;
 
 class Producto
@@ -14,7 +14,6 @@ private:
   int precio;
 
 public:
-  Producto();
   Producto(const string &clave, const string &categoria, const string &descripcion, const int &cantidadDisponible, const int &precio);
 
   void setClave(const string &clave);
