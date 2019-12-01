@@ -9,12 +9,6 @@
 
 using namespace std;
 
-Venta* copiarVenta(Venta *from)
-{
-  Venta *aux = new Venta();
-  return aux;
-}
-
 auto getDay() -> string{
   time_t t = time(NULL);
   tm* timePtr = localtime(&t);

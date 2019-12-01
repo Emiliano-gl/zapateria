@@ -12,9 +12,10 @@ SOURCES += \
         main.cpp
 
 HEADERS += \
-    Clases/auxiliares.h \
+    Clases/auxiliaresClases.h \
     Clases/basededatos.h \
     Clases/bodega.h \
     Clases/empleado.h \
     Clases/producto.h \
-    Clases/venta.h
+    Clases/venta.h \
+    auxiliares.h

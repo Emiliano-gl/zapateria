@@ -1,5 +1,5 @@
 #include "venta.h"
-#include "auxiliares.h"
+#include "auxiliaresClases.h"
 
 Venta::Venta(Empleado *vendedor)
 {
