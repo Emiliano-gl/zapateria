@@ -11,7 +11,6 @@ private:
   string clave;
 
 public:
-  Empleado();
   Empleado(const string &nombre, const string &clave);
 
   void setNombre(const string &nombre);

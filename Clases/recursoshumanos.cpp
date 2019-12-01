@@ -1,6 +1,31 @@
 #include "recursoshumanos.h"
 
-RecursosHumanos::RecursosHumanos()
+void RecursosHumanos::agregarEmpleado(Empleado *empleado)
 {
+  this->empleados.push_back(empleado);
+}
 
+void RecursosHumanos::listaEmpleados()
+{
+  for(auto empleado : this->empleados)
+    cout << empleado->getClave() << " \t " << empleado->getNombre() << endl;
+}
+
+Empleado *RecursosHumanos::getEmpleado(const string &clave)
+{
+  Empleado *auxiliar;
+
+  for(auto empleado : this->empleados){
+
+      if(empleado->getClave() == clave)
+        auxiliar = empleado;
+
+    }
+
+  return auxiliar;
+}
+
+vector<Empleado *> RecursosHumanos::getEmpleados()
+{
+  return this->empleados;
 }

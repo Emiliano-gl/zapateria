@@ -1,11 +1,5 @@
 #include "empleado.h"
 
-Empleado::Empleado()
-{
-  this->nombre = "Luis Hernandez";
-  this->clave = "1234";
-}
-
 Empleado::Empleado(const string &nombre, const string &clave)
 {
   this->nombre = nombre;

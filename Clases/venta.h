@@ -18,8 +18,8 @@ private:
 public:
   Venta();
   Venta(Empleado *vendedor);
-  void agregarProducto(Producto *producto, const int &cantidad);
 
+  void agregarProducto(Producto *producto, const int &cantidad);
   void setEmpleado(Empleado *empleado);
   void setFecha(const int &day, const int &month, const int &year);
 

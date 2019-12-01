@@ -20,4 +20,5 @@ HEADERS += \
     Clases/producto.h \
     Clases/recursoshumanos.h \
     Clases/venta.h \
-    auxiliares.h
+    auxiliares.h \
+    randomData.h
