@@ -9,7 +9,7 @@ void Bodega::reporteInventario()
   for(auto producto : this->inventario){
 
       if(producto->getCategoria() == "tenis casuales"){
-          cout << producto->getClave() << " \t " << producto->getDescripcion() << " \t " << producto->getCantidadDisponible() << " \t " << producto->getPrecio() << endl;
+          cout << producto->getClave() << " \t " << producto->getDescripcion() << " \t " << producto->getCantidadDisponible() << " \t\t $" << producto->getPrecio() << endl;
         }
 
     }
@@ -24,7 +24,7 @@ void Bodega::reporteInventario()
   for(auto producto : this->inventario){
 
       if(producto->getCategoria() == "tenis futbol"){
-          cout << producto->getClave() << " \t " << producto->getDescripcion() << " \t " << producto->getCantidadDisponible() << " \t " << producto->getPrecio() << endl;
+          cout << producto->getClave() << " \t " << producto->getDescripcion() << " \t " << producto->getCantidadDisponible() << " \t\t $" << producto->getPrecio() << endl;
         }
 
     }
@@ -39,7 +39,7 @@ void Bodega::reporteInventario()
   for(auto producto : this->inventario){
 
       if(producto->getCategoria() == "chanclas"){
-          cout << producto->getClave() << " \t " << producto->getDescripcion() << " \t " << producto->getCantidadDisponible() << " \t " << producto->getPrecio() << endl;
+          cout << producto->getClave() << " \t " << producto->getDescripcion() << " \t " << producto->getCantidadDisponible() << " \t\t $" << producto->getPrecio() << endl;
         }
 
     }
@@ -59,7 +59,31 @@ void Bodega::eliminarProducto()
 
 void Bodega::eliminarProducto(const int index)
 {
-  this->inventario.erase(this->inventario.begin() + index);
+    this->inventario.erase(this->inventario.begin() + index);
+}
+
+void Bodega::restarCantidad(const string &clave, const int &cantidad)
+{
+    for(auto producto : this->inventario){
+
+        if(producto->getClave() == clave)
+           producto->vederProducto(cantidad);
+
+    }
+}
+
+bool Bodega::disponible(const string &clave, const int &cantidad)
+{
+    bool dispo = false;
+
+    for(auto producto : this->inventario){
+
+        if(producto->getClave() == clave)
+           dispo = producto->disponible(cantidad);
+
+    }
+
+    return dispo;
 }
 
 Producto * Bodega::getProductoByClave(const string &clave)

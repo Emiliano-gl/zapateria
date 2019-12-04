@@ -11,19 +11,18 @@ using namespace std;
 class Venta
 {
 private:
-  vector<pair<Producto *, int>> ventas;
+  vector<Producto *> ventas;
   Empleado* vendedor;
   string fecha;
 
 public:
-  Venta();
   Venta(Empleado *vendedor);
 
-  void agregarProducto(Producto *producto, const int &cantidad);
+  void agregarProducto(Producto *producto);
   void setEmpleado(Empleado *empleado);
   void setFecha(const int &day, const int &month, const int &year);
 
-  vector<pair<Producto *, int> > getProductos();
+  vector<Producto *> getProductos();
   Empleado *getEmpleado();
   string getFecha();
 };

@@ -38,7 +38,14 @@ void Producto::setCantidadDisponible(const int &cantidadDisponible)
 
 void Producto::setPrecio(const double &precio)
 {
-  this->precio = precio;
+    this->precio = precio;
+}
+
+void Producto::vederProducto(const int &cantidad)
+{
+ if(cantidad <= this->cantidadDisponible){
+     this->cantidadDisponible -= cantidad;
+ }
 }
 
 string Producto::getClave()
@@ -63,5 +70,14 @@ int Producto::getCantidadDisponible()
 
 double Producto::getPrecio()
 {
-  return this->precio;
+    return this->precio;
+}
+
+bool Producto::disponible(const int &cantidad)
+{
+    if(cantidad <= this->cantidadDisponible){
+        return true;
+    } else {
+        return false;
+    }
 }

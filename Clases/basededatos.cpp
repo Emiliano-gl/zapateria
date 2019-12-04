@@ -3,7 +3,6 @@
 void BaseDeDatos::reporteDeVentas()
 {
   string fecha = "";
-  int unidadesVendidas = 0;
   int totalDeVentas = 0;
   double totalVendido = 0;
 
@@ -13,15 +12,13 @@ void BaseDeDatos::reporteDeVentas()
   for(auto venta : this->datos){
 
       for(auto producto : venta->getProductos()){
-          unidadesVendidas += producto.second;
-          totalVendido += producto.first->getPrecio();
+          totalVendido += producto->getPrecio();
         }
 
     }
 
   cout << "Ventas del dia: " << fecha << endl;
   cout << "Total de ventas realizadas: " << totalDeVentas << endl;
-  cout << "Total de unidades vendidas: " << unidadesVendidas << endl;
   cout << "Total de ingresos de las ventas del dia: $" << totalVendido << endl;
 
 }
@@ -30,7 +27,6 @@ void BaseDeDatos::reporteDeVentasVendedor(const string &clave)
 {
   string fecha = "";
   string nombre = "";
-  int unidadesVendidas = 0;
   int totalDeVentas = 0;
   double totalVendido = 0;
 
@@ -43,8 +39,7 @@ void BaseDeDatos::reporteDeVentasVendedor(const string &clave)
           nombre = venta->getEmpleado()->getNombre();
 
           for(auto producto : venta->getProductos()){
-              unidadesVendidas += producto.second;
-              totalVendido += producto.first->getPrecio();
+              totalVendido += producto->getPrecio();
             }
 
         }
@@ -53,12 +48,11 @@ void BaseDeDatos::reporteDeVentasVendedor(const string &clave)
 
   cout << "Clave de vendedor \t Nombre del vendedor" << endl;
   cout << "--------------------------------------------------------" << endl;
-  cout << clave << " \t " << nombre << endl;
+  cout << clave << " \t\t\t " << nombre << endl;
   cout << "--------------------------------------------------------" << endl;
 
   cout << endl << "Ventas del dia: " << fecha << endl;
   cout << "Total de ventas realizadas: " << totalDeVentas << endl;
-  cout << "Total de unidades vendidas: " << unidadesVendidas << endl;
   cout << "Total de ingresos de las ventas del dia: $" << totalVendido << endl;
 }
 

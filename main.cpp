@@ -17,8 +17,7 @@ int main()
   RecursosHumanos *recursosHumanos = new RecursosHumanos;
 
   sampleDataGenerator(recursosHumanos);
-
-  recursosHumanos->listaEmpleados();
+  sampleDataGenerator(bodega);
 
 //  cout << "Ingrese el numero de la opcion deseada: " << endl;
 //  cout << "1) Registrar venta" << endl;
@@ -26,5 +25,18 @@ int main()
 //  cout << "3) Mostrar catalogo" << endl;
 //  cout << "4) Mostrar lista de empleados" << endl;
 //  cout << "5) Salir" << endl;
+
+  Venta *venta = new Venta(recursosHumanos->getEmpleado("45678"));
+  venta->agregarProducto(bodega->getProductoByClave("34567"));
+  venta->agregarProducto(bodega->getProductoByClave("28754"));
+
+  baseDeDatos->agregarVenta(venta);
+
+  baseDeDatos->reporteDeVentas();
+
+  cout << endl << endl;
+  baseDeDatos->reporteDeVentasVendedor("45678");
+  cout << endl;
+
   return 0;
 }

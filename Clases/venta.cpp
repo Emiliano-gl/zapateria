@@ -1,24 +1,15 @@
 #include "venta.h"
 #include "auxiliaresClases.h"
 
-Venta::Venta()
-{
-  this->fecha = getDate();
-}
-
 Venta::Venta(Empleado *vendedor)
 {
   this->vendedor = vendedor;
   this->fecha = getDate();
 }
 
-void Venta::agregarProducto(Producto *producto, const int &cantidad)
+void Venta::agregarProducto(Producto *producto)
 {
-  pair<Producto*, int> articulo;
-  articulo.first = producto;
-  articulo.second = cantidad;
-
-  this->ventas.push_back(articulo);
+  this->ventas.push_back(producto);
 }
 
 void Venta::setEmpleado(Empleado *empleado)
@@ -31,7 +22,7 @@ void Venta::setFecha(const int &day, const int &month, const int &year)
   this->fecha = to_string(day) + "/" + to_string(month) + "/" + to_string(year);
 }
 
-vector<pair<Producto *, int> > Venta::getProductos()
+vector<Producto *> Venta::getProductos()
 {
   return this->ventas;
 }

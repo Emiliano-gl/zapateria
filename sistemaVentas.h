@@ -1,0 +1,4 @@
+#ifndef SISTEMAVENTAS_H
+#define SISTEMAVENTAS_H
+
+#endif // SISTEMAVENTAS_H

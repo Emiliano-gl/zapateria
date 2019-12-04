@@ -15,9 +15,9 @@ Empleado* copiarEmpleado(Empleado *from)
   return aux;
 }
 
-Producto* copiarProducto(Producto *from)
+Producto* copiarProducto(Producto *from, const int &categoria)
 {
-  Producto *aux = new Producto(from->getClave(), from->getCategoria(), from->getDescripcion(), from->getCantidadDisponible(), from->getPrecio());
+  Producto *aux = new Producto(from->getClave(), categoria, from->getDescripcion(), from->getCantidadDisponible(), from->getPrecio());
   return aux;
 }
 

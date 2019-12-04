@@ -21,4 +21,5 @@ HEADERS += \
     Clases/recursoshumanos.h \
     Clases/venta.h \
     auxiliares.h \
-    dataGenerator.h
+    dataGenerator.h \
+    sistemaVentas.h

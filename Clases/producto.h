@@ -21,12 +21,14 @@ public:
   void setDescripcion(const string &descripcion);
   void setCantidadDisponible(const int &cantidadDisponible);
   void setPrecio(const double &precio);
+  void vederProducto(const int &cantidad);
 
   string getClave();
   string getCategoria();
   string getDescripcion();
   int getCantidadDisponible();
   double getPrecio();
+  bool disponible(const int &cantidad);
 };
 
 #endif // PRODUCTO_H
