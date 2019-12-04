@@ -8,7 +8,20 @@ void RecursosHumanos::agregarEmpleado(Empleado *empleado)
 void RecursosHumanos::listaEmpleados()
 {
   for(auto empleado : this->empleados)
-    cout << empleado->getClave() << " \t " << empleado->getNombre() << endl;
+      cout << empleado->getClave() << " \t " << empleado->getNombre() << endl;
+}
+
+bool RecursosHumanos::existeEmpleado(const string &clave)
+{
+ bool existe = false;
+
+ for(auto empleado : this->getEmpleados()){
+
+     if(empleado->getClave() == clave)
+         existe = true;
+ }
+
+ return existe;
 }
 
 Empleado *RecursosHumanos::getEmpleado(const string &clave)

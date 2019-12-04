@@ -7,19 +7,24 @@ void BaseDeDatos::reporteDeVentas()
   double totalVendido = 0;
 
   totalDeVentas = this->datos.size();
-  fecha = this->datos[0]->getFecha();
 
-  for(auto venta : this->datos){
+  if(totalDeVentas >= 1){
+      fecha = this->datos[0]->getFecha();
 
-      for(auto producto : venta->getProductos()){
-          totalVendido += producto->getPrecio();
+      for(auto venta : this->datos){
+
+          for(auto producto : venta->getProductos()){
+              totalVendido += producto.first->getPrecio();
+            }
+
         }
 
-    }
-
-  cout << "Ventas del dia: " << fecha << endl;
-  cout << "Total de ventas realizadas: " << totalDeVentas << endl;
-  cout << "Total de ingresos de las ventas del dia: $" << totalVendido << endl;
+      cout << "Ventas del dia: " << fecha << endl;
+      cout << "Total de ventas realizadas: " << totalDeVentas << endl;
+      cout << "Total de ingresos de las ventas del dia: $" << totalVendido << endl;
+  } else {
+      cout << "No hay ventas realizadas todavia" << endl;
+  }
 
 }
 
@@ -31,29 +36,34 @@ void BaseDeDatos::reporteDeVentasVendedor(const string &clave)
   double totalVendido = 0;
 
   totalDeVentas = this->datos.size();
-  fecha = this->datos[0]->getFecha();
 
-  for(auto venta : this->datos){
+  if(totalDeVentas >= 1){
+      fecha = this->datos[0]->getFecha();
 
-      if(venta->getEmpleado()->getClave() == clave){
-          nombre = venta->getEmpleado()->getNombre();
+      for(auto venta : this->datos){
 
-          for(auto producto : venta->getProductos()){
-              totalVendido += producto->getPrecio();
+          if(venta->getEmpleado()->getClave() == clave){
+              nombre = venta->getEmpleado()->getNombre();
+
+              for(auto producto : venta->getProductos()){
+                  totalVendido += producto.first->getPrecio();
+                }
+
             }
 
         }
 
-    }
+      cout << "Clave de vendedor \t Nombre del vendedor" << endl;
+      cout << "--------------------------------------------------------" << endl;
+      cout << clave << " \t\t\t " << nombre << endl;
+      cout << "--------------------------------------------------------" << endl;
 
-  cout << "Clave de vendedor \t Nombre del vendedor" << endl;
-  cout << "--------------------------------------------------------" << endl;
-  cout << clave << " \t\t\t " << nombre << endl;
-  cout << "--------------------------------------------------------" << endl;
-
-  cout << endl << "Ventas del dia: " << fecha << endl;
-  cout << "Total de ventas realizadas: " << totalDeVentas << endl;
-  cout << "Total de ingresos de las ventas del dia: $" << totalVendido << endl;
+      cout << endl << "Ventas del dia: " << fecha << endl;
+      cout << "Total de ventas realizadas: " << totalDeVentas << endl;
+      cout << "Total de ingresos de las ventas del dia: $" << totalVendido << endl;
+  } else {
+      cout << "No hay ventas realizadas todavia" << endl;
+  }
 }
 
 void BaseDeDatos::agregarVenta(Venta *venta)

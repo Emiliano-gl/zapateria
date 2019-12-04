@@ -38,9 +38,9 @@ void sampleDataGenerator(Bodega *productos){
   vector<string> clavesTenisFutbol = {"23456", "28654", "29495", "20043", "28754"};
   vector<string> clavesChanclas = {"34567", "30000", "35789", "39457", "30809"};
 
-  vector<string> desTenisCasuales = {"vans blancos #26    ", "Tommy Hilfirend #27 ", "Nike color rojo #26 ", "addidas blancos #23 ", "capa de ozono    #26"};
+  vector<string> desTenisCasuales = {"vans blancos #26    ", "Tommy Hilfirend #27 ", "Nike color rojo #26 ", "addidas blancos #23 ", "capa de ozono   #26 "};
   vector<string> desTenisFutbol = {"Pirma Blancos #26-29", "Nike rojo  #25-29   ", "adidas negros #24-28", "Rebook depor #24-28 ", "Cr7 negros #24-28   "};
-  vector<string> desChanclas= {"vans negras #25-28  ", "ChanCla suave #23-27", "chancla gris #22-28 ", "chanclas ok  #22-28 ", " chancla Roja #22-25"};
+  vector<string> desChanclas= {"vans negras #25-28  ", "ChanCla suave #23-27", "chancla gris #22-28 ", "chanclas ok  #22-28 ", "chancla Roja #22-25 "};
 
   vector<int> cantidadTenisCasuales = {2 , 4, 10, 3, 8};
   vector<int> cantidadTenisFutbol = {5, 3, 4, 7, 8};

@@ -86,6 +86,20 @@ bool Bodega::disponible(const string &clave, const int &cantidad)
     return dispo;
 }
 
+Producto * Bodega::obtenerProducto(const string &clave, const int &cantidad)
+{
+    Producto * auxiliar;
+
+    if(this->disponible(clave, cantidad)){
+        this->restarCantidad(clave, cantidad);
+        auxiliar = getProductoByClave(clave);
+    } else{
+        auxiliar = getProductoByClave(clave);
+    }
+
+    return auxiliar;
+}
+
 Producto * Bodega::getProductoByClave(const string &clave)
 {
   Producto *auxiliar;
