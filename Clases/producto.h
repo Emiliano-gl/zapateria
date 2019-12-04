@@ -14,7 +14,7 @@ private:
   double precio;
 
 public:
-  Producto(const string &clave, const string &categoria, const string &descripcion, const int &cantidadDisponible, const double &precio);
+  Producto(const string &clave, const int &categoria, const string &descripcion, const int &cantidadDisponible, const double &precio);
 
   void setClave(const string &clave);
   void setCategoria(const int &categoria);

@@ -1,9 +1,9 @@
 #include "producto.h"
 
-Producto::Producto(const string &clave, const string &categoria, const string &descripcion, const int &cantidadDisponible, const double &precio)
+Producto::Producto(const string &clave, const int &categoria, const string &descripcion, const int &cantidadDisponible, const double &precio)
 {
   this->clave = clave;
-  this->categoria = categoria;
+  this->setCategoria(categoria);
   this->descripcion = descripcion;
   this->cantidadDisponible = cantidadDisponible;
   this->precio = precio;

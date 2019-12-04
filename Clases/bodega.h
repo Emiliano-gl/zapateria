@@ -10,16 +10,16 @@ using namespace std;
 class Bodega
 {
 private:
-  vector<pair<Producto *, int>> inventario;
+  vector<Producto *> inventario;
 
 public:
   void reporteInventario();
-  void agregarProducto(Producto *producto, const int &cantidad);
+  void agregarProducto(Producto *producto);
   void eliminarProducto();
   void eliminarProducto(const int index);
 
-  pair<Producto *, int> getProductoByClave(const string &clave);
-  vector<pair<Producto *, int> > getProductoByCategoria(const int &categoria);
+  Producto *getProductoByClave(const string &clave);
+  vector<Producto *> getProductoByCategoria(const int &categoria);
 };
 
 #endif // BODEGA_H

@@ -6,7 +6,7 @@
 #include "Clases/producto.h"
 #include "Clases/venta.h"
 #include "auxiliares.h"
-#include "randomData.h"
+#include "dataGenerator.h"
 
 using namespace std;
 
@@ -16,8 +16,7 @@ int main()
   Bodega *bodega = new Bodega;
   RecursosHumanos *recursosHumanos = new RecursosHumanos;
 
-  for(int i = 0; i < 5; i++)
-    randomEmpleados(recursosHumanos);
+  sampleDataGenerator(recursosHumanos);
 
   recursosHumanos->listaEmpleados();
 

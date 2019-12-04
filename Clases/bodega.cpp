@@ -8,8 +8,8 @@ void Bodega::reporteInventario()
 
   for(auto producto : this->inventario){
 
-      if(producto.first->getCategoria() == "tenis casuales"){
-          cout << producto.first->getClave() << " \t " << producto.first->getDescripcion() << " \t " << producto.second << " \t " << producto.first->getPrecio() << endl;
+      if(producto->getCategoria() == "tenis casuales"){
+          cout << producto->getClave() << " \t " << producto->getDescripcion() << " \t " << producto->getCantidadDisponible() << " \t " << producto->getPrecio() << endl;
         }
 
     }
@@ -23,8 +23,8 @@ void Bodega::reporteInventario()
 
   for(auto producto : this->inventario){
 
-      if(producto.first->getCategoria() == "tenis futbol"){
-          cout << producto.first->getClave() << " \t " << producto.first->getDescripcion() << " \t " << producto.second << " \t " << producto.first->getPrecio() << endl;
+      if(producto->getCategoria() == "tenis futbol"){
+          cout << producto->getClave() << " \t " << producto->getDescripcion() << " \t " << producto->getCantidadDisponible() << " \t " << producto->getPrecio() << endl;
         }
 
     }
@@ -38,8 +38,8 @@ void Bodega::reporteInventario()
 
   for(auto producto : this->inventario){
 
-      if(producto.first->getCategoria() == "chanclas"){
-          cout << producto.first->getClave() << " \t " << producto.first->getDescripcion() << " \t " << producto.second << " \t " << producto.first->getPrecio() << endl;
+      if(producto->getCategoria() == "chanclas"){
+          cout << producto->getClave() << " \t " << producto->getDescripcion() << " \t " << producto->getCantidadDisponible() << " \t " << producto->getPrecio() << endl;
         }
 
     }
@@ -47,13 +47,9 @@ void Bodega::reporteInventario()
   cout << endl;
 }
 
-void Bodega::agregarProducto(Producto *producto, const int &cantidad)
+void Bodega::agregarProducto(Producto *producto)
 {
-  pair<Producto*, int> articulo;
-  articulo.first = producto;
-  articulo.second = cantidad;
-
-  this->inventario.push_back(articulo);
+  this->inventario.push_back(producto);
 }
 
 void Bodega::eliminarProducto()
@@ -66,13 +62,13 @@ void Bodega::eliminarProducto(const int index)
   this->inventario.erase(this->inventario.begin() + index);
 }
 
-pair<Producto *, int> Bodega::getProductoByClave(const string &clave)
+Producto * Bodega::getProductoByClave(const string &clave)
 {
-  pair<Producto *, int> auxiliar;
+  Producto *auxiliar;
 
   for(auto producto : this->inventario){
 
-      if(producto.first->getClave() == clave)
+      if(producto->getClave() == clave)
          auxiliar = producto;
 
     }
@@ -80,9 +76,9 @@ pair<Producto *, int> Bodega::getProductoByClave(const string &clave)
   return auxiliar;
 }
 
-vector<pair<Producto *, int> > Bodega::getProductoByCategoria(const int &categoria)
+vector<Producto *> Bodega::getProductoByCategoria(const int &categoria)
 {
-  vector<pair<Producto *, int> > auxiliar;
+  vector<Producto *> auxiliar;
   string cate = "";
 
   if(categoria == 0)
@@ -96,7 +92,7 @@ vector<pair<Producto *, int> > Bodega::getProductoByCategoria(const int &categor
 
   for(auto producto : this->inventario){
 
-      if(producto.first->getCategoria() == cate)
+      if(producto->getCategoria() == cate)
         auxiliar.push_back(producto);
 
     }
