@@ -116,27 +116,3 @@ Producto * Bodega::getProductoByClave(const string &clave)
 
   return auxiliar;
 }
-
-vector<Producto *> Bodega::getProductoByCategoria(const int &categoria)
-{
-  vector<Producto *> auxiliar;
-  string cate = "";
-
-  if(categoria == 0)
-    cate = "tenis casuales";
-
-  if(categoria == 1)
-    cate = "tenis futbol";
-
-  if(categoria == 2)
-    cate = "chanclas";
-
-  for(auto producto : this->inventario){
-
-      if(producto->getCategoria() == cate)
-        auxiliar.push_back(producto);
-
-    }
-
-  return auxiliar;
-}

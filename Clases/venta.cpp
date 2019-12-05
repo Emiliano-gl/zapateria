@@ -17,16 +17,6 @@ void Venta::agregarProducto(Producto *producto, const int &cantidad)
   this->ventas.push_back(auxiliar);
 }
 
-void Venta::setEmpleado(Empleado *empleado)
-{
-  this->vendedor = empleado;
-}
-
-void Venta::setFecha(const int &day, const int &month, const int &year)
-{
-  this->fecha = to_string(day) + "/" + to_string(month) + "/" + to_string(year);
-}
-
 void Venta::informacion()
 {
   double subtotal = 0;

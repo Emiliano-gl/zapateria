@@ -19,9 +19,7 @@ public:
   bool disponible(const string &clave, const int &cantidad);
   Producto * obtenerProducto(const string &clave, const int &cantidad);
   bool existeProducto(const string &clave);
-
   Producto *getProductoByClave(const string &clave);
-  vector<Producto *> getProductoByCategoria(const int &categoria);
 };
 
 #endif // BODEGA_H

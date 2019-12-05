@@ -12,10 +12,6 @@ private:
 
 public:
   Empleado(const string &nombre, const string &clave);
-
-  void setNombre(const string &nombre);
-  void setClave(const string &clave);
-
   string getNombre();
   string getClave();
 };

@@ -5,12 +5,6 @@ void RecursosHumanos::agregarEmpleado(Empleado *empleado)
   this->empleados.push_back(empleado);
 }
 
-void RecursosHumanos::listaEmpleados()
-{
-  for(auto empleado : this->empleados)
-    cout << empleado->getClave() << " \t " << empleado->getNombre() << endl;
-}
-
 bool RecursosHumanos::existeEmpleado(const string &clave)
 {
   bool existe = false;

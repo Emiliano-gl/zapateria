@@ -15,10 +15,7 @@ private:
 public:
   void reporteDeVentas();
   void reporteDeVentasVendedor(const string &clave);
-
   void agregarVenta(Venta *venta);
-  void quitarVenta();
-  void quitarVenta(const int &index);
 };
 
 #endif // BASEDEDATOS_H

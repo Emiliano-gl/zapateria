@@ -6,16 +6,6 @@ Empleado::Empleado(const string &nombre, const string &clave)
   this->clave = clave;
 }
 
-void Empleado::setNombre(const string &nombre)
-{
-  this->nombre = nombre;
-}
-
-void Empleado::setClave(const string &clave)
-{
-  this->clave = clave;
-}
-
 string Empleado::getNombre()
 {
   return this->nombre;

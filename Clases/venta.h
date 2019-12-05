@@ -19,8 +19,6 @@ public:
   Venta(Empleado *vendedor);
 
   void agregarProducto(Producto *producto, const int &cantidad);
-  void setEmpleado(Empleado *empleado);
-  void setFecha(const int &day, const int &month, const int &year);
   void informacion();
 
   vector<pair<Producto *, int>> getProductos();

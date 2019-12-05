@@ -14,7 +14,6 @@ private:
 
 public:
   void agregarEmpleado(Empleado *empleado);
-  void listaEmpleados();
   bool existeEmpleado(const string &clave);
 
   Empleado *getEmpleado(const string &clave);
