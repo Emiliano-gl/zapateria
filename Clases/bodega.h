@@ -15,11 +15,10 @@ private:
 public:
   void reporteInventario();
   void agregarProducto(Producto *producto);
-  void eliminarProducto();
-  void eliminarProducto(const int index);
   void restarCantidad(const string &clave, const int &cantidad);
   bool disponible(const string &clave, const int &cantidad);
   Producto * obtenerProducto(const string &clave, const int &cantidad);
+  bool existeProducto(const string &clave);
 
   Producto *getProductoByClave(const string &clave);
   vector<Producto *> getProductoByCategoria(const int &categoria);

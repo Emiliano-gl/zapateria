@@ -52,52 +52,55 @@ void Bodega::agregarProducto(Producto *producto)
   this->inventario.push_back(producto);
 }
 
-void Bodega::eliminarProducto()
-{
-  this->inventario.pop_back();
-}
-
-void Bodega::eliminarProducto(const int index)
-{
-    this->inventario.erase(this->inventario.begin() + index);
-}
-
 void Bodega::restarCantidad(const string &clave, const int &cantidad)
 {
-    for(auto producto : this->inventario){
+  for(auto producto : this->inventario){
 
-        if(producto->getClave() == clave)
-           producto->vederProducto(cantidad);
+      if(producto->getClave() == clave)
+        producto->vederProducto(cantidad);
 
     }
 }
 
 bool Bodega::disponible(const string &clave, const int &cantidad)
 {
-    bool dispo = false;
+  bool dispo = false;
 
-    for(auto producto : this->inventario){
+  for(auto producto : this->inventario){
 
-        if(producto->getClave() == clave)
-           dispo = producto->disponible(cantidad);
+      if(producto->getClave() == clave)
+        dispo = producto->disponible(cantidad);
 
     }
 
-    return dispo;
+  return dispo;
 }
 
 Producto * Bodega::obtenerProducto(const string &clave, const int &cantidad)
 {
-    Producto * auxiliar;
+  Producto * auxiliar;
 
-    if(this->disponible(clave, cantidad)){
-        this->restarCantidad(clave, cantidad);
-        auxiliar = getProductoByClave(clave);
+  if(this->disponible(clave, cantidad)){
+      this->restarCantidad(clave, cantidad);
+      auxiliar = getProductoByClave(clave);
     } else{
-        auxiliar = getProductoByClave(clave);
+      auxiliar = getProductoByClave(clave);
     }
 
-    return auxiliar;
+  return auxiliar;
+}
+
+bool Bodega::existeProducto(const string &clave)
+{
+  bool existe = false;
+
+  for(auto producto : this->inventario){
+
+      if(producto->getClave() == clave)
+        existe = true;
+    }
+
+  return existe;
 }
 
 Producto * Bodega::getProductoByClave(const string &clave)
@@ -107,7 +110,7 @@ Producto * Bodega::getProductoByClave(const string &clave)
   for(auto producto : this->inventario){
 
       if(producto->getClave() == clave)
-         auxiliar = producto;
+        auxiliar = producto;
 
     }
 

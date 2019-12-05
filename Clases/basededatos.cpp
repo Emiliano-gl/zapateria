@@ -22,9 +22,9 @@ void BaseDeDatos::reporteDeVentas()
       cout << "Ventas del dia: " << fecha << endl;
       cout << "Total de ventas realizadas: " << totalDeVentas << endl;
       cout << "Total de ingresos de las ventas del dia: $" << totalVendido << endl;
-  } else {
+    } else {
       cout << "No hay ventas realizadas todavia" << endl;
-  }
+    }
 
 }
 
@@ -35,7 +35,13 @@ void BaseDeDatos::reporteDeVentasVendedor(const string &clave)
   int totalDeVentas = 0;
   double totalVendido = 0;
 
-  totalDeVentas = this->datos.size();
+  for(auto venta : this->datos){
+
+      if(venta->getEmpleado()->getClave() == clave){
+          totalDeVentas += 1;
+        }
+
+    }
 
   if(totalDeVentas >= 1){
       fecha = this->datos[0]->getFecha();
@@ -61,9 +67,9 @@ void BaseDeDatos::reporteDeVentasVendedor(const string &clave)
       cout << endl << "Ventas del dia: " << fecha << endl;
       cout << "Total de ventas realizadas: " << totalDeVentas << endl;
       cout << "Total de ingresos de las ventas del dia: $" << totalVendido << endl;
-  } else {
+    } else {
       cout << "No hay ventas realizadas todavia" << endl;
-  }
+    }
 }
 
 void BaseDeDatos::agregarVenta(Venta *venta)
